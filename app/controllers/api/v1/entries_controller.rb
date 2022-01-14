@@ -7,9 +7,12 @@ class Api::V1::EntriesController < ApplicationController
 
     def create
         entry = Entry.new(entry_params)
-
-
-    end
+        if entry.save
+            render json: entry, status: :accepted
+        else
+            render json: {errors: entry.full_messages}, status :unprocessible_entity
+        end
+     end
 
     private
 
