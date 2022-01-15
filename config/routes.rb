@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       resources :competitions, only: [:index]
     end
   end
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :competitions, only: [:index]
+  #   end
+  # end
 
-
+  
 end
