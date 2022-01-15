@@ -14,6 +14,10 @@ class Api::V1::EntriesController < ApplicationController
         end
      end
 
+     def show
+
+     end
+
     private
 
     def entry_params
