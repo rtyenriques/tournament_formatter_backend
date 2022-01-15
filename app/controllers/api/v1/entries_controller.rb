@@ -2,7 +2,7 @@ class Api::V1::EntriesController < ApplicationController
 
     def index
         entries = Entry.all
-        render json: entries
+        render json: EntrySerializer.new(entries)
     end
 
     def create
@@ -10,7 +10,7 @@ class Api::V1::EntriesController < ApplicationController
         if entry.save
             render json: entry, status: :accepted
         else
-            render json: {errors: entry.full_messages}, status :unprocessible_entity
+            # render json: {errors: entry.full_messages}, status :unprocessible_entity
         end
      end
 
