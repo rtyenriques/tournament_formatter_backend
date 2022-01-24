@@ -8,9 +8,9 @@ class Api::V1::CompetitionsController < ApplicationController
     def create
         competition = Competition.new(competition_params)
         if competition.save
-            render json: entry, status: :accepted
+            render json: competition, status: :accepted
         else
-            # render json: {errors: entry.full_messages}, status :unprocessible_entity
+            # render json: { errors: competition.full_messages}, status :unprocessable_entity
         end
      end
 

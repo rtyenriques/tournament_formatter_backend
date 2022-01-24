@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_222641) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "competition_id"
+    t.bigint "competition_id", null: false
     t.index ["competition_id"], name: "index_entries_on_competition_id"
   end
 
